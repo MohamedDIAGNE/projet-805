@@ -26,18 +26,18 @@
                                 <button class="tablinks" onclick="window.location.assign('LoginServlet');">Sign In</button>
                             </div>
                         </div>
-                        <form class="form-detail" action="LoginServlet">
+                        <form class="form-detail" method="post" action="LoginServlet">
                             <div class="tabcontent" id="sign-up">
                                 <div class="form-row">
                                     <label class="form-row-inner">
-                                        <input type="text" name="your_email" id="your_email" class="input-text" required>
+                                        <input type="text" name="login" id="login" class="input-text" required>
                                         <span class="label">E-Mail</span>
                                           <span class="border"></span>
                                     </label>
                                 </div>
                                 <div class="form-row">
                                     <label class="form-row-inner">
-                                        <input type="password" id="motdepasse" name="motdepasse" class="input-text" required>
+                                        <input type="password" id="password" name="password" class="input-text" required>
                                         <span class="label">Password</span>
                                         <span class="border"></span>
                                     </label>

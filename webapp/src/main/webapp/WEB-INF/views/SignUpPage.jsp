@@ -26,32 +26,32 @@
                                 <button class="tablinks" onclick="window.location.assign('LoginServlet');">Sign In</button>
                             </div>
                         </div>
-                        <form class="form-detail" action="SignUpServlet">
+                        <form class="form-detail" method="post"  action="SignUpServlet">
                             <div class="tabcontent" id="sign-up">
                                 <div class="form-row">
                                     <label class="form-row-inner">
-                                        <input type="text" id="nom" name="nom" value="" class="input-text" required>
+                                        <input type="text" id="login" name="login"  class="input-text" required>
                                         <span class="label">Username</span>
                                           <span class="border"></span>
                                     </label>
                                 </div>
                                 <div class="form-row">
                                     <label class="form-row-inner">
-                                        <input type="text" name="your_email" id="your_email" class="input-text" required>
+                                        <input type="text" name="email" id="email" class="input-text" required>
                                         <span class="label">E-Mail</span>
                                           <span class="border"></span>
                                     </label>
                                 </div>
                                 <div class="form-row">
                                     <label class="form-row-inner">
-                                        <input type="password" id="motdepasse" name="motdepasse" class="input-text" required>
+                                        <input type="password" id="password" name="password" class="input-text" required>
                                         <span class="label">Password</span>
                                         <span class="border"></span>
                                     </label>
                                 </div>
                                 <div class="form-row">
                                     <label class="form-row-inner">
-                                        <input type="password" id="confirmation" name="confirmation" value="" class="input-text" required>
+                                        <input type="password" id="confirm_password" name="confirm_password"  class="input-text" required>
                                         <span class="label">Comfirm Password</span>
                                         <span class="border"></span>
                                     </label>
