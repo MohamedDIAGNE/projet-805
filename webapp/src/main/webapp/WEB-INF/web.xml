@@ -55,4 +55,3 @@
   	<url-pattern>/AddActivityServlet</url-pattern>
   </servlet-mapping>
 </web-app>
-

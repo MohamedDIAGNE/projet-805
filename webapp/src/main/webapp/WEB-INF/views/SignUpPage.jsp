@@ -15,7 +15,7 @@
             <div class="page-content">
                 <div class="form-v8-content">
                     <div class="form-left">
-                        <img src="images/running-3.png"@ alt="form">
+                        <img src="images/body4.png"@ alt="form">
                     </div>
                     <div class="form-right">
                         <div class="tab">
