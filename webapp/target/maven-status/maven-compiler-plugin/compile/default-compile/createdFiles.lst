@@ -1,9 +1,0 @@
-com/tracking/Model/Position.class
-com/tracking/Model/Activites.class
-com/tracking/Servlet/LoginServlet.class
-com/tracking/Servlet/LogoutServlet.class
-com/tracking/Servlet/HomeServlet.class
-com/tracking/Model/Users.class
-com/tracking/Servlet/SignUpServlet.class
-com/tracking/Servlet/AddActivityServlet.class
-com/tracking/Database/DatabaseClass.class

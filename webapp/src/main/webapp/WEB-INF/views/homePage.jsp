@@ -11,7 +11,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tracking</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="images/logo_small_icon_only_inverted.png">
@@ -79,36 +78,20 @@
                     <li class="active">
                         <a href="HomeServlet"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
-                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
-                  
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="#">Data Table</a></li>
-                        </ul>
-                    </li>
 
                     <li class="menu-title">Data</li><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Activities</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Course</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">heart rate</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="LancerActiviteServlet">Course</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Details</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="LogoutServlet">Logout</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="DetailActiviteServlet"> Maps</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -129,33 +112,6 @@
             </div>
             <div class="top-right">
                 <div class="header-menu">
-                    <div class="header-left">
-                        <div class="form-inline">
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">3</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-check"></i>
-                                    <p>Vous devez faire du vélo.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-info"></i>
-                                    <p>Vous devez faire du ski</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-warning"></i>
-                                    <p>Vous devez faire un jogging</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        
-                    </div>
-
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
@@ -317,10 +273,10 @@
                                                 <tr>
                                                     <th class="serial">#</th>
                                                     <th>Activity</th>
-                                                    <th>Date</th>
-                                                    <th>heart</th>
-                                                    <th>PositionS</th>
-                                                    <th>PositionA</th>
+                                                    <th>Date Started</th>
+                                                    <th>Date Arrived</th>
+                                                    <th>Time</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -335,10 +291,6 @@
 														<td> <span class="name"><%=att.get("date")%></span> </td>
 														<td><span class="name">#</span></td>
 														<td><span class="name">#</span></td>
-														<td><span class="name">#</span></td>
-                                                   		<td>
-                                                   	     	<span class="badge badge-warning">edit</span>
-                                                    	</td>
 														<td>
                                                         	<span class="badge badge-danger">delete</span>
                                                     	</td>
@@ -362,7 +314,7 @@
                                 <div class="col-lg-6 col-xl-12">
                                     <div class="card bg-flat-color-3  ">
                                         <div class="card-body">
-                                            <h4 class="card-title m-0  white-color ">May 2021</h4>
+                                            <h4 class="card-title m-0  white-color ">June 2021</h4>
                                         </div>
                                          <div class="card-body">
                                              <div id="flotLine5" class="flot-line"></div>
