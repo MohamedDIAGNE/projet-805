@@ -1,5 +1,5 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
@@ -34,6 +34,18 @@
   	<description></description>
   	<servlet-class>com.tracking.Servlet.AddActivityServlet</servlet-class>
   </servlet>
+  <servlet>
+	<servlet-name>LancerActiviteServlet</servlet-name>
+	<display-name>LancerActiviteServlet</display-name>
+	<description></description>
+	<servlet-class>com.tracking.Servlet.LancerActiviteServlet</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>DetailActiviteServlet</servlet-name>
+	<display-name>DetailActiviteServlet</display-name>
+	<description></description>
+	<servlet-class>com.tracking.Servlet.DetailActiviteServlet</servlet-class>
+</servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
@@ -54,4 +66,12 @@
   	<servlet-name>AddActivityServlet</servlet-name>
   	<url-pattern>/AddActivityServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>LancerActiviteServlet</servlet-name>
+	<url-pattern>/LancerActiviteServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>DetailActiviteServlet</servlet-name>
+	<url-pattern>/DetailActiviteServlet</url-pattern>
+</servlet-mapping>
 </web-app>

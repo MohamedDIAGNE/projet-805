@@ -131,16 +131,16 @@
         var today = new Date($.now());
 
         var defaultEvents =  [{
-                title: 'Hey!',
+                title: 'vélo',
                 start: new Date($.now() + 158000000),
                 className: 'bg-dark'
             }, {
-                title: 'See John Deo',
+                title: 'Jogging',
                 start: today,
                 end: today,
                 className: 'bg-danger'
             }, {
-                title: 'Buy a Theme',
+                title: 'ski',
                 start: new Date($.now() + 338000000),
                 className: 'bg-primary'
             }];

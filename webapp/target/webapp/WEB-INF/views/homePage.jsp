@@ -11,7 +11,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tracking</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="images/logo_small_icon_only_inverted.png">
@@ -36,6 +35,9 @@
     #weatherWidget .currentDesc {
         color: #ffffff!important;
     }
+        .longueur_px {
+            width: 100%;
+        }
         .traffic-chart {
             min-height: 335px;
         }
@@ -79,36 +81,20 @@
                     <li class="active">
                         <a href="HomeServlet"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
-                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
-                  
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="#">Data Table</a></li>
-                        </ul>
-                    </li>
 
                     <li class="menu-title">Data</li><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Activities</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Course</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">heart rate</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="LancerActiviteServlet">Course</a></li>
                         </ul>
                     </li>
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Details</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="LogoutServlet">Logout</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="DetailActiviteServlet"> Maps</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -129,33 +115,6 @@
             </div>
             <div class="top-right">
                 <div class="header-menu">
-                    <div class="header-left">
-                        <div class="form-inline">
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">3</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-check"></i>
-                                    <p>Vous devez faire du vélo.</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-info"></i>
-                                    <p>Vous devez faire du ski</p>
-                                </a>
-                                <a class="dropdown-item media" href="#">
-                                    <i class="fa fa-warning"></i>
-                                    <p>Vous devez faire un jogging</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        
-                    </div>
-
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
@@ -185,8 +144,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">100</span></div>
-                                            <div class="stat-heading">jogging</div>
+                                            <div class="stat-text"><span class="count"><% out.println(nb1); %></span></div>
+                                            <div class="stat-heading">Jogging</div>
                                         </div>
                                     </div>
                                 </div>
@@ -203,8 +162,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">50</span></div>
-                                            <div class="stat-heading">vélo</div>
+                                            <div class="stat-text"><span class="count"><% out.println(nb2); %></span></div>
+                                            <div class="stat-heading">Ski</div>
                                         </div>
                                     </div>
                                 </div>
@@ -221,8 +180,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">12</span></div>
-                                            <div class="stat-heading">Ski</div>
+                                            <div class="stat-text"><span class="count"><% out.println(nb3); %></span></div>
+                                            <div class="stat-heading">Vélo</div>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +198,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">10</span></div>
+                                            <div class="stat-text"><span class="count"><% out.println(nb4); %></span></div>
                                             <div class="stat-heading">Car</div>
                                         </div>
                                     </div>
@@ -267,28 +226,28 @@
                                     <div class="card-body">
                                         <div class="progress-box progress-1">
                                             <h4 class="por-title">Jogging</h4>
-                                            <div class="por-txt">100(40%)</div>
+                                            <div class="por-txt"><% out.println(nb1); %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                               <div class="progress-bar bg-flat-color-1" role="progressbar" style="longueur_px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="progress-box progress-2">
                                             <h4 class="por-title">Vélo</h4>
-                                            <div class="por-txt"> 50(24%)</div>
+                                            <div class="por-txt"> <% out.println(nb2); %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
                                                 <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="progress-box progress-2">
                                             <h4 class="por-title">Ski</h4>
-                                            <div class="por-txt">12 (60%)</div>
+                                            <div class="por-txt"><% out.println(nb3); %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
                                                 <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="progress-box progress-2">
                                             <h4 class="por-title">Car</h4>
-                                            <div class="por-txt">10(90%)</div>
+                                            <div class="por-txt"><% out.println(nb4); %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
                                                 <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
@@ -315,35 +274,55 @@
                                         <table class="table ">
                                             <thead>
                                                 <tr>
-                                                    <th class="serial">#</th>
                                                     <th>Activity</th>
-                                                    <th>Date</th>
-                                                    <th>heart</th>
-                                                    <th>PositionS</th>
-                                                    <th>PositionA</th>
+                                                    <th>Date Started</th>
+                                                    <th>Date Arrived</th>
+                                                    <th>Time</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                    <%! String categorie1="jogging"; %>
+                                                    <%! String categorie2="ski"; %>
+                                                    <%! String categorie3="velo"; %>
+                                                    <%! String categorie4="car"; %>
+                                                    <%! String categorie=" "; %>
+                                                    <%! String categori=" "; %>
+                                                    <%! int nb1=0; %>
+                                                    <%! int nb2=0; %>
+                                                    <%! int nb3=0; %>
+                                                    <%! int nb4=0; %>
 													<%
-														List<DBObject> attribut = (List<DBObject>)request.getAttribute("activites");         
+														List<DBObject> attribut = (List<DBObject>)request.getAttribute("activites"); 
+                                                            
+                                                            nb1=0;
+                                                            nb2=0;
+                                                            nb3=0;
+                                                            nb4=0;
 															for( DBObject att : attribut   )
 															{
+                                                              categorie= (String) att.get("nomactivite");
+
+                                                              if(categorie.equals(categorie1)){ 
+                                                                    nb1++;
+                                                               }else if(categorie.equals(categorie2)){ 
+                                                                    nb2++;
+                                                               }else if(categorie.equals(categorie3)){ 
+                                                                    nb3++;
+                                                               }else if(categorie.equals(categorie4)){ 
+                                                                    nb4++;
+                                                               }
 														%>
 														<tr>
-														<td><span class="name">#</span></td>
 														<td>  <span class="name"><%=att.get("nomactivite")%></span></td>
-														<td> <span class="name"><%=att.get("date")%></span> </td>
-														<td><span class="name">#</span></td>
-														<td><span class="name">#</span></td>
-														<td><span class="name">#</span></td>
-                                                   		<td>
-                                                   	     	<span class="badge badge-warning">edit</span>
-                                                    	</td>
+														<td> <span class="name"><%=att.get("datedebut")%></span> </td>
+														<td><span class="name"><%=att.get("datefin")%></span></td>
+														<td><span class="name"><%=att.get("nbrminutes")%></span></td>
 														<td>
                                                         	<span class="badge badge-danger">delete</span>
                                                     	</td>
 														<td>
-                                                        	<span class="badge badge-success">View</span>
+                                                        	<span class="badge badge-success"><a href="DetailActiviteServlet">View</a></span>
                                                    		 </td>
 														</tr>
 														<%  
@@ -362,7 +341,7 @@
                                 <div class="col-lg-6 col-xl-12">
                                     <div class="card bg-flat-color-3  ">
                                         <div class="card-body">
-                                            <h4 class="card-title m-0  white-color ">May 2021</h4>
+                                            <h4 class="card-title m-0  white-color ">June 2021</h4>
                                         </div>
                                          <div class="card-body">
                                              <div id="flotLine5" class="flot-line"></div>
@@ -574,53 +553,6 @@
             }
             // Traffic Chart using chartist End
             //Traffic chart chart-js
-            if ($('#TrafficChart').length) {
-                var ctx = document.getElementById( "TrafficChart" );
-                ctx.height = 150;
-                var myChart = new Chart( ctx, {
-                    type: 'line',
-                    data: {
-                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
-                        datasets: [
-                        {
-                            label: "Visit",
-                            borderColor: "rgba(4, 73, 203,.09)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(4, 73, 203,.5)",
-                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
-                        },
-                        {
-                            label: "Bounce",
-                            borderColor: "rgba(245, 23, 66, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(245, 23, 66,.5)",
-                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
-                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
-                        },
-                        {
-                            label: "Targeted",
-                            borderColor: "rgba(40, 169, 46, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(40, 169, 46, .5)",
-                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
-                            data: [1000, 5200, 3600, 2600, 4200, 5300, 0 ]
-                        }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        tooltips: {
-                            mode: 'index',
-                            intersect: false
-                        },
-                        hover: {
-                            mode: 'nearest',
-                            intersect: true
-                        }
-
-                    }
-                } );
-            }
             //Traffic chart chart-js  End
             
         });

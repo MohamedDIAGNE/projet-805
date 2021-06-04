@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.mongodb.DBObject;
 import com.tracking.Database.DatabaseClass;
 
-
+import org.bson.types.ObjectId;
 
 
 
@@ -69,10 +69,13 @@ public class LoginServlet extends HttpServlet {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/views/SignInPage.jsp").forward(request, response);
 
 		}else {
+			ObjectId idObj = (ObjectId)user.get("_id");
+
+			String id = idObj.toString();
 			System.out.println("Connexion reussi");
 			HttpSession session = request.getSession();
 			session.setAttribute("login", user.get("login"));
-			session.setAttribute("id", user.get("_id"));
+			session.setAttribute("id", id);
 			session.setMaxInactiveInterval(60*30);
 			response.sendRedirect("/webapp/HomeServlet");	
 		}
