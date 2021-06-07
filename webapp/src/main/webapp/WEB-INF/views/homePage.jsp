@@ -312,9 +312,15 @@
 														%>
 														<tr>
 														<td>  <span class="name"><%=att.get("nomactivite")%></span></td>
+<<<<<<< HEAD
 														<td> <span class="name"><%=att.get("datedebut")%></span> </td>
 														<td><span class="name"><%=att.get("datefin")%></span></td>
 														<td><span class="name"><%=att.get("nbrminutes")%></span></td>
+=======
+														<td> <span class="name"><%=att.get("date")%></span> </td>
+														<td><span class="name">#</span></td>
+														<td><span class="name">#</span></td>
+>>>>>>> 5002e67a100d14e8091cb705a24b332f7621e870
 														<td>
                                                         	<span class="badge badge-danger">delete</span>
                                                     	</td>

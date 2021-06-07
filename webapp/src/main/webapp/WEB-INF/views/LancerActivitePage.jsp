@@ -62,7 +62,10 @@
 					<option>jogging</option>
 					<option>ski</option>
 					<option>velo</option>
+<<<<<<< HEAD
           <option>car</option>
+=======
+>>>>>>> 5002e67a100d14e8091cb705a24b332f7621e870
 				</select>
   <div class="tim">
   	<span >0 h</span> :
@@ -245,7 +248,11 @@
 	   datefin =  (today).toISOString();
 	   console.log("datefin",datedebut)
 	   
+<<<<<<< HEAD
 	   nbrminutes=  h*60+mn*60+s;
+=======
+	   nbrminutes=  h*60+mn+s/60;
+>>>>>>> 5002e67a100d14e8091cb705a24b332f7621e870
 	   
 	   $.ajax({
 	          method: "POST",
