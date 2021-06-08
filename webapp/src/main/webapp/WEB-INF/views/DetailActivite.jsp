@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.List"%>
+<%@page import="com.mongodb.DBObject"%>
+<%@page import="org.bson.BSONObject "%>
+<%@page import="org.json.JSONObject"%>
+
 <!DOCTYPE html>
 <meta charset="ISO-8859-1">
 <title>Maps</title>
@@ -123,18 +128,30 @@
                             </div>
                         </header>
             <div class="content">
+               
                 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAEhbPTWelYOCQcpiTg9-BTbd_ynw3a3FY&sensor=false&callback=map_init"></script>
                     <script type="text/javascript">
                         function InitializeMap() {
                             var ltlng = [];
-
-                            ltlng.push(new google.maps.LatLng(34.05716168659233, -117.19573972322391));
+                            <%
+                            List<JSONObject> attribut = (List<JSONObject>)request.getAttribute("positions"); 
+                                for( JSONObject att : attribut   )
+                                    {              
+                            %>
+                           
+                            <%=att.getString("Latitude")%>  
+                            <%=att.getString("Longitude")%>  
+                            ltlng.push(new google.maps.LatLng(<%=att.getString("Latitude")%>  , <%=att.getString("Longitude")%>));
+                            <%  
+                                    }      
+                            %>
+                            
                             ltlng.push(new google.maps.LatLng(34.056821813274674, -117.19573651940273));
                             //ltlng.push(new google.maps.LatLng(12.24, 70.16));
 
                             // var latlng = new google.maps.LatLng(-34.397, 150.644);
                             var myOptions = {
-                                zoom: 8,
+                                zoom: 20,
                                 //center: latlng,
                                 center: ltlng[0],
                                 mapTypeId: google.maps.MapTypeId.ROADMAP

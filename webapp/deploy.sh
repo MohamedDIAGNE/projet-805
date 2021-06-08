@@ -26,6 +26,6 @@ sudo cp /home/user/projet-805/webapp/target/webapp.war /opt/wildfly/standalone/d
 
 sleep 20
 echo "*************************************************LOG*********************************************"
-cat /opt/wildfly/standalone/log/server.log 
+#cat /opt/wildfly/standalone/log/server.log 
 
 

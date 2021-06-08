@@ -91,7 +91,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Details</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="DetailActiviteServlet"> Maps</a></li>
+                           <!--<li><i class="menu-icon fa fa-map-o"></i><a href="DetailActiviteServlet"> Maps</a></li>--> 
                         </ul>
                     </li>
                 </ul>
@@ -312,25 +312,23 @@
 														%>
 														<tr>
 														<td>  <span class="name"><%=att.get("nomactivite")%></span></td>
-<<<<<<< HEAD
 														<td> <span class="name"><%=att.get("datedebut")%></span> </td>
 														<td><span class="name"><%=att.get("datefin")%></span></td>
 														<td><span class="name"><%=att.get("nbrminutes")%></span></td>
-=======
-														<td> <span class="name"><%=att.get("date")%></span> </td>
-														<td><span class="name">#</span></td>
-														<td><span class="name">#</span></td>
->>>>>>> 5002e67a100d14e8091cb705a24b332f7621e870
+
 														<td>
                                                         	<span class="badge badge-danger">delete</span>
                                                     	</td>
 														<td>
-                                                        	<span class="badge badge-success"><a href="DetailActiviteServlet">View</a></span>
+                                                        	<span class="badge badge-success"><a href='DetailActiviteServlet?id=<%=att.get("_id")%>'>View</a></span>
+                                                            <!--<span class="badge badge-success"><a href="DetailActiviteServlet?id=<%=att.get("_id")%></a>">View</a></span>-->
                                                    		 </td>
 														</tr>
 														<%  
 															}      
 														%>
+
+
                                             </tbody>
                                         </table>
                                     </div> <!-- /.table-stats -->
