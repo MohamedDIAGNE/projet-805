@@ -464,7 +464,7 @@
 														<td><span class="name"><%=att.get("nbrminutes")%></span></td>
 
 														<td>
-                                                        	<span class="badge badge-danger">delete</span>
+                                                        	<span class="badge badge-danger"><a href='DeleteActiviteServlet?id=<%=att.get("_id")%>'>delete</a></span>
                                                     	</td>
 														<td>
                                                         	<span class="badge badge-success"><a href='DetailActiviteServlet?id=<%=att.get("_id")%>'>View</a></span>
