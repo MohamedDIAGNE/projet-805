@@ -2,7 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="com.mongodb.DBObject"%>
-<%@page import="org.bson.BSONObject "%>
+<%@page import="org.bson.BSONObject"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.text.ParseException"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 
 <!doctype html>
 
@@ -87,13 +92,6 @@
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="LancerActiviteServlet">Course</a></li>
                         </ul>
                     </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Details</a>
-                        <ul class="sub-menu children dropdown-menu">
-                           <!--<li><i class="menu-icon fa fa-map-o"></i><a href="DetailActiviteServlet"> Maps</a></li>--> 
-                        </ul>
-                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -141,7 +139,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count"><% out.println(nb1); %></span></div>
+                                            <div class="stat-text"><span class="count"><%= nb1 %></span></div>
                                             <div class="stat-heading">Jogging</div>
                                         </div>
                                     </div>
@@ -159,8 +157,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count"><% out.println(nb2); %></span></div>
-                                            <div class="stat-heading">Ski</div>
+                                            <div class="stat-text"><span class="count"><%= nb2 %></span></div>
+                                            <div class="stat-heading">Vélo</div>
                                         </div>
                                     </div>
                                 </div>
@@ -177,8 +175,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count"><% out.println(nb3); %></span></div>
-                                            <div class="stat-heading">Vélo</div>
+                                            <div class="stat-text"><span class="count"><%= nb2 %></span></div>
+                                            <div class="stat-heading">Ski</div>
                                         </div>
                                     </div>
                                 </div>
@@ -195,7 +193,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count"><% out.println(nb4); %></span></div>
+                                            <div class="stat-text"><span class="count"><%= nb4 %></span></div>
                                             <div class="stat-heading">Car</div>
                                         </div>
                                     </div>
@@ -210,7 +208,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="box-title">Traffic </h4>
+                                <h4 class="box-title">Stastiques </h4>
                             </div>
                             <div class="row">
                                 <div class="col-lg-8">
@@ -219,34 +217,44 @@
                                         <div id="traffic-chart" class="traffic-chart"></div>
                                     </div>
                                 </div>
+                                <% total = nb1+nb2+nb3+nb4; 
+                                    if(total!=0){
+                                        nb1p= nb1*100/total;
+                                        nb2p= nb2*100/total;
+                                        nb3p= nb3*100/total;
+                                        nb4p= nb4*100/total;
+
+                                    }
+                                
+                                %>
                                 <div class="col-lg-4">
                                     <div class="card-body">
                                         <div class="progress-box progress-1">
                                             <h4 class="por-title">Jogging</h4>
-                                            <div class="por-txt"><% out.println(nb1); %>%</div>
+                                            <div class="por-txt"><%= nb1p %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                            <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width:<%= nb1p %>%;"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="progress-box progress-2">
                                             <h4 class="por-title">Vélo</h4>
-                                            <div class="por-txt"> <% out.println(nb2); %>%</div>
+                                            <div class="por-txt"> <%= nb2p %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: <%= nb2p %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <div class="progress-box progress-2">
+                                        <div class="progress-box progress-3">
                                             <h4 class="por-title">Ski</h4>
-                                            <div class="por-txt"><% out.println(nb3); %>%</div>
+                                            <div class="por-txt"><%= nb3p %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: <%= nb3p %>%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <div class="progress-box progress-2">
+                                        <div class="progress-box progress-4">
                                             <h4 class="por-title">Car</h4>
-                                            <div class="por-txt"><% out.println(nb4); %>%</div>
+                                            <div class="por-txt"><%= nb4p %>%</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: <%= nb4p %>%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div> <!-- /.card-body -->
@@ -284,21 +292,160 @@
                                                     <%! String categorie3="velo"; %>
                                                     <%! String categorie4="car"; %>
                                                     <%! String categorie=" "; %>
-                                                    <%! String categori=" "; %>
+                                                    <%! String jour=" "; %>
                                                     <%! int nb1=0; %>
                                                     <%! int nb2=0; %>
                                                     <%! int nb3=0; %>
                                                     <%! int nb4=0; %>
+                                                    <%! String jour1="Mon"; %>
+                                                    <%! String jour2="Tue"; %>
+                                                    <%! String jour3="Wed"; %>
+                                                    <%! String jour4="thu"; %>
+                                                    <%! String jour5="Fri"; %>
+                                                    <%! String jour6="Sat"; %>
+                                                    <%! String jour7="Sun"; %>
+                                                    <%! int j1=0; %>
+                                                    <%! int j2=0; %>
+                                                    <%! int j3=0; %>
+                                                    <%! int j4=0; %>
+                                                    <%! int j5=0; %>
+                                                    <%! int j6=0; %>
+                                                    <%! int j7=0; %>
+                                                    <%! int j8=0; %>
+                                                    <%! int j9=0; %>
+                                                    <%! int j10=0; %>
+                                                    <%! int j11=0; %>
+                                                    <%! int j12=0; %>
+                                                    <%! int j13=0; %>
+                                                    <%! int j14=0; %>
+                                                    <%! int j15=0; %>
+                                                    <%! int j16=0; %>
+                                                    <%! int j17=0; %>
+                                                    <%! int j18=0; %>
+                                                    <%! int j19=0; %>
+                                                    <%! int j20=0; %>
+                                                    <%! int j21=0; %>
+                                                    <%! int j22=0; %>
+                                                    <%! int j23=0; %>
+                                                    <%! int j24=0; %>
+                                                    <%! int j25=0; %>
+                                                    <%! int j26=0; %>
+                                                    <%! int j27=0; %>
+                                                    <%! int j28=0; %>
+                                                    <%! int total=0; %>
+                                                    <%! float nb1p=0; %>
+                                                    <%! float nb2p=0; %>
+                                                    <%! float nb3p=0; %>
+                                                    <%! float nb4p=0; %>
+
+
 													<%
+
 														List<DBObject> attribut = (List<DBObject>)request.getAttribute("activites"); 
                                                             
                                                             nb1=0;
                                                             nb2=0;
                                                             nb3=0;
                                                             nb4=0;
+                                                            j1=0;
+                                                            j2=0;
+                                                            j3=0;
+                                                            j4=0;
+                                                            j5=0;
+                                                            j6=0;
+                                                            j7=0;
+                                                            j8=0;
+                                                            j9=0;
+                                                            j10=0;
+                                                            j11=0;
+                                                            j12=0;
+                                                            j13=0;
+                                                            j14=0;
+                                                            j15=0;
+                                                            j16=0;
+                                                            j17=0;
+                                                            j18=0;
+                                                            j19=0;
+                                                            j20=0;
+                                                            j21=0;
+                                                            j22=0;
+                                                            j23=0;
+                                                            j24=0;
+                                                            j25=0;
+                                                            j26=0;
+                                                            j27=0;
+                                                            j28=0;
+            
+                                                            
 															for( DBObject att : attribut   )
 															{
                                                               categorie= (String) att.get("nomactivite");
+                                                              java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat( "EE" );
+                                                              jour= formater.format(att.get("datedebut"));
+                                                              
+                                                              if(categorie.equals(categorie1) && jour.equals(jour1)){
+                                                                j1++;
+                                                              }else if(categorie.equals(categorie1) && jour.equals(jour2)){
+                                                                j2++;
+                                                              }else if(categorie.equals(categorie1) && jour.equals(jour3)){
+                                                                j3++;
+                                                              }else if(categorie.equals(categorie1) && jour.equals(jour4)){
+                                                                j4++;
+                                                              }else if(categorie.equals(categorie1) && jour.equals(jour5)){
+                                                                j5++;
+                                                              }else if(categorie.equals(categorie1) && jour.equals(jour6)){
+                                                                j6++;
+                                                              }else if(categorie.equals(categorie1) && jour.equals(jour7)){
+                                                                j7++;
+                                                              }
+
+                                                              if(categorie.equals(categorie2) && jour.equals(jour1)){
+                                                                j8++;
+                                                              }else if(categorie.equals(categorie2) && jour.equals(jour2)){
+                                                                j9++;
+                                                              }else if(categorie.equals(categorie2) && jour.equals(jour3)){
+                                                                j10++;
+                                                              }else if(categorie.equals(categorie2) && jour.equals(jour4)){
+                                                                j11++;
+                                                              }else if(categorie.equals(categorie2) && jour.equals(jour5)){
+                                                                j12++;
+                                                              }else if(categorie.equals(categorie2) && jour.equals(jour6)){
+                                                                j13++;
+                                                              }else if(categorie.equals(categorie2) && jour.equals(jour7)){
+                                                                j14++;
+                                                              }
+
+                                                              if(categorie.equals(categorie3) && jour.equals(jour1)){
+                                                                j15++;
+                                                              }else if(categorie.equals(categorie3) && jour.equals(jour2)){
+                                                                j16++;
+                                                              }else if(categorie.equals(categorie3) && jour.equals(jour3)){
+                                                                j17++;
+                                                              }else if(categorie.equals(categorie3) && jour.equals(jour4)){
+                                                                j18++;
+                                                              }else if(categorie.equals(categorie3) && jour.equals(jour5)){
+                                                                j19++;
+                                                              }else if(categorie.equals(categorie3) && jour.equals(jour6)){
+                                                                j20++;
+                                                              }else if(categorie.equals(categorie3) && jour.equals(jour7)){
+                                                                j21++;
+                                                              }
+
+                                                              if(categorie.equals(categorie4) && jour.equals(jour1)){
+                                                                j22++;
+                                                              }else if(categorie.equals(categorie4) && jour.equals(jour2)){
+                                                                j23++;
+                                                              }else if(categorie.equals(categorie4) && jour.equals(jour3)){
+                                                                j24++;
+                                                              }else if(categorie.equals(categorie4) && jour.equals(jour4)){
+                                                                j25++;
+                                                              }else if(categorie.equals(categorie4) && jour.equals(jour5)){
+                                                                j26++;
+                                                              }else if(categorie.equals(categorie4) && jour.equals(jour6)){
+                                                                j27++;
+                                                              }else if(categorie.equals(categorie4) && jour.equals(jour7)){
+                                                                j28++;
+                                                              }
 
                                                               if(categorie.equals(categorie1)){ 
                                                                     nb1++;
@@ -327,7 +474,6 @@
 														<%  
 															}      
 														%>
-
 
                                             </tbody>
                                         </table>
@@ -521,11 +667,12 @@
             // Traffic Chart using chartist
             if ($('#traffic-chart').length) {
                 var chart = new Chartist.Line('#traffic-chart', {
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                   series: [
-                  [0, 18000, 35000,  25000,  22000,  0],
-                  [0, 33000, 15000,  20000,  15000,  300],
-                  [0, 15000, 28000,  15000,  30000,  5000]
+                  [<%=j1 %>, <%=j2 %>, <%=j3 %>,  <%=j4 %>,  <%=j5 %>,  <%=j6 %>, <%=j7 %>],
+                  [<%=j8 %>, <%=j9 %>, <%=j10 %>,  <%=j11 %>,  <%=j12 %>,  <%=j13 %>, <%=j14 %>],
+                  [<%=j15 %>, <%=j16 %>, <%=j17 %>,  <%=j18 %>,  <%=j19 %>,  <%=j20 %>, <%=j21 %>],
+                  [<%=j22 %>, <%=j23 %>, <%=j24 %>,  <%=j25 %>,  <%=j26 %>,  <%=j27 %>, <%=j28 %>]
                   ]
               }, {
                   low: 0,

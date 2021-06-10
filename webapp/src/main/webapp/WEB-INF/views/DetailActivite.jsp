@@ -146,7 +146,7 @@
                                     }      
                             %>
                             
-                            ltlng.push(new google.maps.LatLng(34.056821813274674, -117.19573651940273));
+                            //ltlng.push(new google.maps.LatLng(34.056821813274674, -117.19573651940273));
                             //ltlng.push(new google.maps.LatLng(12.24, 70.16));
 
                             // var latlng = new google.maps.LatLng(-34.397, 150.644);

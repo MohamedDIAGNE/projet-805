@@ -1398,13 +1398,17 @@ header .form-inline {
 .traffic-chart .ct-series-b .ct-area,
 .traffic-chart .ct-series-b .ct-slice-donut-solid,
 .traffic-chart .ct-series-b .ct-slice-pie {
-  fill: #ef5350; }
+  fill: #5c6bc0; }
 
 .traffic-chart .ct-series-c .ct-area,
 .traffic-chart .ct-series-c .ct-slice-donut-solid,
 .traffic-chart .ct-series-c .ct-slice-pie {
-  fill: #5c6bc0; }
+  fill: #4da2db; }
 
+.traffic-chart .ct-series-d .ct-area,
+.traffic-chart .ct-series-d .ct-slice-donut-solid,
+.traffic-chart .ct-series-d .ct-slice-pie {
+  fill: #ef5350; }
 .flotRealtime2 {
   height: 445px; }
 
